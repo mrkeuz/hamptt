@@ -1,8 +1,8 @@
 import time
 
+from hamptt.boards.btptt import BtPtt
 import pytest  # type: ignore
 
-import hamptt.boards.btptt
 from tests import BT_ADDR_1
 
 max_time = 5
@@ -18,7 +18,7 @@ max_time = 5
     warmup=False
 )
 def test_send_recv(benchmark):
-    ptt = hamptt.boards.btptt.BtPtt(BT_ADDR_1)
+    ptt = BtPtt(BT_ADDR_1)
 
     try:
         @benchmark

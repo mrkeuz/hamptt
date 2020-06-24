@@ -16,4 +16,3 @@ class GpioPtt(AbstractPtt):
 
     def close(self):
         pass
-

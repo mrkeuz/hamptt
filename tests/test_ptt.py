@@ -9,4 +9,3 @@ def test_ptt():
         ptt.begin()
 
         ptt.end()
-

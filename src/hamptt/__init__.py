@@ -10,4 +10,4 @@ except DistributionNotFound:
 finally:
     del get_distribution, DistributionNotFound
 
-from hamptt.pttchooser import open_ptt
+from hamptt.pttchooser import open_ptt  # noqa: F401

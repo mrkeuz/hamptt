@@ -2,7 +2,7 @@ import logging
 
 import bluetooth  # type: ignore
 
-from func_timeout import func_set_timeout # type: ignore
+from func_timeout import func_set_timeout  # type: ignore
 
 from hamptt.boards.abstptt import AbstractPtt
 
