@@ -49,17 +49,17 @@ Installation
 
 Host machine:
 
-* Linux Bluetooth or similar for you distributive (required for pyBluez) ::
+* Linux Bluetooth or similar for you distributive (required for pybluez) ::
 
     sudo apt-get install bluez libbluetooth-dev
 
 * Python ::
 
-    TBD
+    python3 -m pip install "hamptt[bt]"
 
 Hardware:
 
-* Upload sketch via ArdiuinoIde to your esp-32::
+* Upload sketch via ArduinoIde to your esp-32::
 
     src/arduiono/ptt_firmware_bt/ptt_firmware_bt.ino
 
