@@ -1,0 +1,361 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 8268 11693 portrait
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Conn_01x04_Female J8
+U 1 1 5EFC2AC7
+P 3300 1100
+F 0 "J8" H 3328 1076 50  0000 L CNN
+F 1 "Baofeng" H 3328 985 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 3300 1100 50  0001 C CNN
+F 3 "~" H 3300 1100 50  0001 C CNN
+	1    3300 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_Array:ULN2003 U1
+U 1 1 5EFC6706
+P 2100 1200
+F 0 "U1" H 2100 1867 50  0000 C CNN
+F 1 "ULN2003" H 2100 1776 50  0000 C CNN
+F 2 "Package_DIP:DIP-16_W7.62mm" H 2150 650 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/uln2003a.pdf" H 2200 1000 50  0001 C CNN
+	1    2100 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5EFC8A3C
+P 2100 1800
+F 0 "#PWR0101" H 2100 1550 50  0001 C CNN
+F 1 "GND" H 2105 1627 50  0000 C CNN
+F 2 "" H 2100 1800 50  0001 C CNN
+F 3 "" H 2100 1800 50  0001 C CNN
+	1    2100 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5EFE0C03
+P 1300 1100
+F 0 "#PWR0102" H 1300 850 50  0001 C CNN
+F 1 "GND" H 1305 927 50  0000 C CNN
+F 2 "" H 1300 1100 50  0001 C CNN
+F 3 "" H 1300 1100 50  0001 C CNN
+	1    1300 1100
+	1    0    0    -1  
+$EndComp
+Text GLabel 3100 1000 0    50   Output ~ 0
+AO
+Text GLabel 3100 1100 0    50   Output ~ 0
+PT
+Text GLabel 3100 1300 0    50   Output ~ 0
+AI
+Wire Wire Line
+	1250 3500 1250 3400
+$Comp
+L Connector:AudioJack3 J2
+U 1 1 5EFBD973
+P 1050 3500
+F 0 "J2" H 1032 3825 50  0000 C CNN
+F 1 "AO" H 1032 3734 50  0000 C CNN
+F 2 "User:Audio_5conn" H 1050 3500 50  0001 C CNN
+F 3 "~" H 1050 3500 50  0001 C CNN
+	1    1050 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5EFBE4B9
+P 3100 1200
+F 0 "#PWR0103" H 3100 950 50  0001 C CNN
+F 1 "GND" H 3105 1027 50  0000 C CNN
+F 2 "" H 3100 1200 50  0001 C CNN
+F 3 "" H 3100 1200 50  0001 C CNN
+	1    3100 1200
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J5
+U 1 1 5EFC0A95
+P 2750 3600
+F 0 "J5" H 2950 3350 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 2722 3573 50  0001 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2750 3600 50  0001 C CNN
+F 3 "~" H 2750 3600 50  0001 C CNN
+	1    2750 3600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J7
+U 1 1 5EFC13C3
+P 3350 3500
+F 0 "J7" H 3550 3650 50  0000 C CNN
+F 1 "Conn_01x02_Male" H 3458 3590 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3350 3500 50  0001 C CNN
+F 3 "~" H 3350 3500 50  0001 C CNN
+	1    3350 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J6
+U 1 1 5EFC255A
+P 3350 2600
+F 0 "J6" H 3500 2750 50  0000 C CNN
+F 1 "Conn_01x02_Male" H 3458 2690 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3350 2600 50  0001 C CNN
+F 3 "~" H 3350 2600 50  0001 C CNN
+	1    3350 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 2500 1250 2600
+Text GLabel 3550 3600 2    50   Input ~ 0
+AO
+$Comp
+L power:GND #PWR0104
+U 1 1 5EFDF504
+P 3550 3500
+F 0 "#PWR0104" H 3550 3250 50  0001 C CNN
+F 1 "GND" H 3555 3327 50  0000 C CNN
+F 2 "" H 3550 3500 50  0001 C CNN
+F 3 "" H 3550 3500 50  0001 C CNN
+	1    3550 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5EFDFA96
+P 3550 2600
+F 0 "#PWR0105" H 3550 2350 50  0001 C CNN
+F 1 "GND" H 3555 2427 50  0000 C CNN
+F 2 "" H 3550 2600 50  0001 C CNN
+F 3 "" H 3550 2600 50  0001 C CNN
+	1    3550 2600
+	0    -1   -1   0   
+$EndComp
+Text GLabel 3550 2700 2    50   Input ~ 0
+AI
+Text GLabel 2500 1000 2    50   Input ~ 0
+PT
+$Comp
+L Device:R R4
+U 1 1 5EFFBFEC
+P 2050 2600
+F 0 "R4" V 1843 2600 50  0000 C CNN
+F 1 "R300" V 1934 2600 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" V 1980 2600 50  0001 C CNN
+F 3 "~" H 2050 2600 50  0001 C CNN
+	1    2050 2600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5F0022B9
+P 1750 2600
+F 0 "C1" V 1498 2600 50  0000 C CNN
+F 1 "C1uf" V 1589 2600 50  0000 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 1788 2450 50  0001 C CNN
+F 3 "~" H 1750 2600 50  0001 C CNN
+	1    1750 2600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5F007B6A
+P 2050 3500
+F 0 "C2" V 1798 3500 50  0000 C CNN
+F 1 "C1uf" V 1889 3500 50  0000 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 2088 3350 50  0001 C CNN
+F 3 "~" H 2050 3500 50  0001 C CNN
+	1    2050 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5F007FF6
+P 1750 3500
+F 0 "R3" V 1543 3500 50  0000 C CNN
+F 1 "R300" V 1634 3500 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" V 1680 3500 50  0001 C CNN
+F 3 "~" H 1750 3500 50  0001 C CNN
+	1    1750 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 5F0139B9
+P 2250 2750
+F 0 "R5" H 2180 2704 50  0000 R CNN
+F 1 "R15k" H 2180 2795 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" V 2180 2750 50  0001 C CNN
+F 3 "~" H 2250 2750 50  0001 C CNN
+	1    2250 2750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5F014D5F
+P 1500 2750
+F 0 "R1" H 1430 2704 50  0000 R CNN
+F 1 "R1.5k" H 1430 2795 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" V 1430 2750 50  0001 C CNN
+F 3 "~" H 1500 2750 50  0001 C CNN
+	1    1500 2750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2550 2700 2550 2900
+$Comp
+L Connector:Conn_01x02_Male J3
+U 1 1 5EFBF319
+P 2750 2700
+F 0 "J3" H 3000 2450 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 2722 2673 50  0001 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2750 2700 50  0001 C CNN
+F 3 "~" H 2750 2700 50  0001 C CNN
+	1    2750 2700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2200 2600 2250 2600
+Wire Wire Line
+	1600 2600 1500 2600
+Wire Wire Line
+	1500 2600 1250 2600
+Connection ~ 1500 2600
+Wire Wire Line
+	1500 2900 1250 2900
+Wire Wire Line
+	1250 2900 1250 2700
+Connection ~ 1500 2900
+Connection ~ 2250 2600
+Connection ~ 2250 2900
+Wire Wire Line
+	1500 2900 2250 2900
+Wire Wire Line
+	2250 2600 2550 2600
+Wire Wire Line
+	2550 2700 2600 2700
+Wire Wire Line
+	2250 2900 2550 2900
+Wire Wire Line
+	2200 3500 2250 3500
+$Comp
+L Device:R R2
+U 1 1 5F03A168
+P 1500 3650
+F 0 "R2" H 1430 3604 50  0000 R CNN
+F 1 "R15k" H 1430 3695 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" V 1430 3650 50  0001 C CNN
+F 3 "~" H 1500 3650 50  0001 C CNN
+	1    1500 3650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1600 3500 1500 3500
+$Comp
+L Device:R R6
+U 1 1 5F03B074
+P 2250 3650
+F 0 "R6" H 2180 3604 50  0000 R CNN
+F 1 "R1.5k" H 2180 3695 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" V 2180 3650 50  0001 C CNN
+F 3 "~" H 2250 3650 50  0001 C CNN
+	1    2250 3650
+	-1   0    0    1   
+$EndComp
+Connection ~ 2250 3500
+Wire Wire Line
+	2250 3500 2550 3500
+Wire Wire Line
+	2550 3600 2550 3800
+Wire Wire Line
+	2550 3800 2250 3800
+Wire Wire Line
+	2250 3800 1500 3800
+Connection ~ 2250 3800
+Wire Wire Line
+	1500 3800 1250 3800
+Wire Wire Line
+	1250 3800 1250 3600
+Connection ~ 1500 3800
+Wire Wire Line
+	1500 3500 1250 3500
+Connection ~ 1500 3500
+Connection ~ 1250 3500
+Text Notes 2900 3600 0    50   ~ 0
+Tor coil
+Wire Notes Line
+	2700 3700 3400 3700
+Wire Notes Line
+	3400 3700 3400 3400
+Wire Notes Line
+	3400 3400 2700 3400
+Wire Notes Line
+	2700 3400 2700 3700
+Text Notes 2850 2700 0    50   ~ 0
+Tor coil
+Connection ~ 2550 2700
+Connection ~ 2550 2600
+Wire Wire Line
+	2550 2600 2600 2600
+Wire Notes Line
+	2700 2500 2700 2800
+Wire Notes Line
+	2700 2800 3400 2800
+Wire Notes Line
+	3400 2800 3400 2500
+Wire Notes Line
+	3400 2500 2700 2500
+Text GLabel 1100 1000 0    50   Input ~ 0
+PIN
+Text GLabel 1100 1100 0    50   Input ~ 0
+GND
+Connection ~ 1250 2600
+$Comp
+L Connector:AudioJack3 J1
+U 1 1 5EFBCD1E
+P 1050 2600
+F 0 "J1" H 1032 2925 50  0000 C CNN
+F 1 "AI" H 1032 2834 50  0000 C CNN
+F 2 "User:Audio_5conn" H 1050 2600 50  0001 C CNN
+F 3 "~" H 1050 2600 50  0001 C CNN
+	1    1050 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:DIODE D1
+U 1 1 5EFDB5F1
+P 1500 1000
+F 0 "D1" H 1500 1300 50  0000 C CNN
+F 1 "DIODE" H 1500 1174 50  0001 C CNN
+F 2 "Diode_THT:D_A-405_P7.62mm_Horizontal" H 1500 1000 50  0001 C CNN
+F 3 "~" H 1500 1000 50  0001 C CNN
+	1    1500 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J4
+U 1 1 5EFD44E9
+P 1100 1000
+F 0 "J4" H 1350 950 50  0000 C CNN
+F 1 "PTT" H 1000 1150 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1100 1000 50  0001 C CNN
+F 3 "~" H 1100 1000 50  0001 C CNN
+	1    1100 1000
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
