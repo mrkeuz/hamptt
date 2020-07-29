@@ -2,7 +2,7 @@
 Ham radio PTT
 =============
  
-Implementations of Push-To-Tank circuit for ham radio transmitters like Baofeng UV-5R
+Implementations of Push-To-Talk circuit for ham radio transmitters like Baofeng UV-5R
 
 Schematic
 ---------
