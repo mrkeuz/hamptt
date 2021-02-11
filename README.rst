@@ -1,19 +1,20 @@
-=============
-Ham radio PTT
-=============
+=======
+Ham PTT
+=======
  
-Implementations of Push-To-Talk circuit for ham radio transmitters like Baofeng UV-5R
+Remote bluethooth PTT switch for ham radio transmitters like Baofeng UV-5R
+
+Problematic
+-----------
+
+Board helps to control transmitter from PC. Uart interface turned out to be irreplaceable. During transmit via uart usb-ttl chip periodically crashes and stops working. Cause is some radio strong interference on USB cable. So Bluetooth serial protocol stack chosen instead. 
+
 
 Schematic
 ---------
 
 Host -> (Bluetooth) -> Esp-32 Arduino -> Relay -> Transmitter PTT button
 
-Considerations
---------------
-
-Using Bluetooth stack over uart considered to avoid hangs builtin esp-32 usb-to-uart controller during transmit some data.
-Cause is some radio interference on usb cable.
 
 Hardware
 --------
@@ -22,26 +23,17 @@ Hardware
 * Relay shield
 
 Examples
-________
+--------
 
-Command line ::
 
-    TBD
-
-From python
-
-* Bluetooth PTT::
+* Bluetooth PTT ::
 
     from hamptt import open_ptt
 
     with open_ptt(bt_addr="A0:B1:C2:D3:E4:F5") as ptt
         ptt.begin()
-        # I.e. play sound to transmitter or something else
+        # I.e. play message to transmitter or something else
         ptt.end()
-
-* GPIO PTT ::
-
-    TBD
 
 
 Installation
@@ -75,5 +67,3 @@ Hardware:
   .. image:: https://www.dxzone.com/dx33739/baofeng-mic-pin-out-and-programming-cable-schematics.jpg
 
   See: https://www.dxzone.com/dx33739/baofeng-mic-pin-out-and-programming-cable-schematics.html
-
-Enjoy!
