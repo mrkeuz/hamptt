@@ -3,6 +3,7 @@ from contextlib import contextmanager
 from typing import Generator
 
 from hamptt.boards.abstptt import AbstractPtt
+from hamptt.utils import RepeatedTimer
 
 _logger = logging.getLogger(__name__)
 
@@ -11,11 +12,15 @@ _logger = logging.getLogger(__name__)
 def _bt_ptt(bt_addr: str) -> Generator[AbstractPtt, None, None]:
     from hamptt.boards.btptt import BtPtt
     ptt_obj = BtPtt(bt_addr)
+    pinger = RepeatedTimer(1, ptt_obj.ping)
+    pinger.start()
+
     try:
         yield ptt_obj
 
     finally:
         _logger.debug('Closing bt ptt')
+        pinger.stop()
         ptt_obj.end()
         ptt_obj.close()
 
