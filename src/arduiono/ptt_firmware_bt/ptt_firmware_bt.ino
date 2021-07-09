@@ -5,11 +5,17 @@ void(* reset) (void) = 0; //Reset function
 BluetoothSerial ESP_BT; 
 
 const int LED_PIN = 2;
-const int TX_PIN = 15;
+const int TX_PIN = 25;
 
 unsigned long currentMillis = 0;
 unsigned long previousMillis = 0;
-const long restBlinkInterval = 1000;
+unsigned long lastTxMillis = 0;
+unsigned long lastCommandMillis = 0;
+boolean tx = false;
+
+const long txTimout = 15000;
+const long commandTimout = 60000;
+
 
 long runSign = random(0, 2147483646L);
 
@@ -17,7 +23,7 @@ long runSign = random(0, 2147483646L);
 // the setup routine runs once when you press reset:
 void setup() {
   // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
+  Serial.begin(115200);
   ESP_BT.begin("Baofeng PTT 1");
 
   pinMode(TX_PIN, OUTPUT);
@@ -25,14 +31,32 @@ void setup() {
 
   digitalWrite(TX_PIN, LOW);
   digitalWrite(LED_PIN, LOW);
+
+  Serial.println("Starting...");
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
+  
+  //Check hang bt or other problems
+  if(tx && millis() > lastTxMillis + txTimout){
+      Serial.println("TX seems hang. Rebooting...");
+      stopTx();
+      reset();
+  }
+
+  //Check BT stack hang
+  if(millis() > lastCommandMillis + commandTimout){
+      Serial.println("Timeout. No input commands. Seems BT hang. Rebooting...");
+      stopTx();
+      reset();
+  }
 
   blinkTik();
 
   if (ESP_BT.available()) {
+
+    lastCommandMillis = millis();
 
     readBlink();
 
@@ -41,8 +65,7 @@ void loop() {
 
     switch (incomingByte) {
       case 'T':
-        ESP_BT.print("TX");
-        digitalWrite(TX_PIN, HIGH);
+        startTx();
         break;
 
       case 'C':
@@ -74,10 +97,22 @@ void loop() {
         break;
 
       default:
-        ESP_BT.print("RX");
-        digitalWrite(TX_PIN, LOW);
+        stopTx();
     }
   }
+}
+
+void startTx(){
+  ESP_BT.print("TX");
+  digitalWrite(TX_PIN, HIGH);
+  lastTxMillis = millis();
+  tx = true;
+}
+
+void stopTx(){
+  ESP_BT.print("RX");
+  digitalWrite(TX_PIN, LOW);
+  tx = false;
 }
 
 void readBlink() {
@@ -86,6 +121,14 @@ void readBlink() {
 }
 
 void blinkTik() {
+
+  long restBlinkInterval;
+  
+  if (tx){
+    restBlinkInterval = 25;  
+  } else {
+    restBlinkInterval = 1000;
+  }
 
   currentMillis = millis();
 
