@@ -13,8 +13,8 @@ unsigned long lastTxMillis = 0;
 unsigned long lastCommandMillis = 0;
 boolean tx = false;
 
-const long txTimout = 15000;
-const long commandTimout = 60000;
+const long txTimeout = 15000;
+const long commandTimeout = 60000;
 
 
 long runSign = random(0, 2147483646L);
@@ -44,14 +44,14 @@ void setup() {
 void loop() {
   
   //Check hang bt or other problems
-  if(tx && millis() > lastTxMillis + txTimout){
+  if(tx && millis() > lastTxMillis + txTimeout){
       Serial.println("TX seems hang. Rebooting...");
       stopTx();
       reset();
   }
 
   //Check BT stack hang
-  if(millis() > lastCommandMillis + commandTimout){
+  if(millis() > lastCommandMillis + commandTimeout){
       Serial.println("Timeout. No input commands. Seems BT hang. Rebooting...");
       stopTx();
       reset();
