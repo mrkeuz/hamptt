@@ -23,8 +23,7 @@ Hardware
 
 Examples
 --------
-
-  
+ 
 - Find BT devices `hcitool scan`
 - Bluetooth PTT
 
@@ -61,7 +60,7 @@ python3 -m pip install "hamptt[bt]"
 - Connect relay and audio in/out to Transmitter Cable. You can rebuild your hands-free cable or buy another one. I.e.
   Schematics for Baofeng looks like:
 
-  .. image:: https://www.dxzone.com/dx33739/baofeng-mic-pin-out-and-programming-cable-schematics.jpg
+  ![alt text](https://www.dxzone.com/dx33739/baofeng-mic-pin-out-and-programming-cable-schematics.jpg "Baofeng UV-5R Pins") 
 
   See: https://www.dxzone.com/dx33739/baofeng-mic-pin-out-and-programming-cable-schematics.html
 
