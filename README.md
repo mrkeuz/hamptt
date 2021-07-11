@@ -53,7 +53,7 @@ python3 -m pip install "hamptt[bt]"
 
 * Esp32:
 
-- Upload sketch via ArduinoIde to your Ssp-32 `src/arduiono/ptt_firmware_bt/ptt_firmware_bt.ino`
+- Upload sketch to your esp-32 `src/arduiono/ptt_firmware_bt/ptt_firmware_bt.ino`
 - Connect pins Esp-32 -> relays
 
     - VVC -> Relay +
