@@ -19,6 +19,11 @@ const long commandTimout = 60000;
 
 long runSign = random(0, 2147483646L);
 
+void blinkTik();
+void singleBlink();
+void blinkTik();
+void stopTx();
+void startTx();
 
 // the setup routine runs once when you press reset:
 void setup() {
@@ -58,7 +63,7 @@ void loop() {
 
     lastCommandMillis = millis();
 
-    readBlink();
+    singleBlink();
 
     // read byte
     char incomingByte = toupper(ESP_BT.read());
@@ -70,10 +75,6 @@ void loop() {
 
       case 'C':
         ESP_BT.print("WORK");
-        break;
-
-      case 'L':
-        //noop
         break;
 
       case 'S':
@@ -93,11 +94,7 @@ void loop() {
         ESP_BT.println("  \"C\" - check, print 'WORK' string");
         ESP_BT.println("  \"S\" - print unique run sign number (changes when restart or reconnect)");
         ESP_BT.println("  \"K\" - restart arduino");
-        ESP_BT.println("  \"L\" - keepalive package");
         break;
-
-      default:
-        stopTx();
     }
   }
 }
@@ -115,7 +112,11 @@ void stopTx(){
   tx = false;
 }
 
-void readBlink() {
+inline void digitalToggle(byte pin) {
+  digitalWrite(pin, !digitalRead(pin));
+}
+
+void singleBlink() {
   currentMillis = millis();
   digitalToggle(LED_PIN);
 }
@@ -123,9 +124,9 @@ void readBlink() {
 void blinkTik() {
 
   long restBlinkInterval;
-  
+
   if (tx){
-    restBlinkInterval = 25;  
+    restBlinkInterval = 25;
   } else {
     restBlinkInterval = 1000;
   }
@@ -141,6 +142,4 @@ void blinkTik() {
 
 }
 
-inline void digitalToggle(byte pin) {
-  digitalWrite(pin, !digitalRead(pin));
-}
+

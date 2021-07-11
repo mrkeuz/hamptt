@@ -53,7 +53,8 @@ python3 -m pip install "hamptt[bt]"
 
 * Esp32
 
-  - Upload sketch to your esp-32 `src/arduiono/ptt_firmware_bt/ptt_firmware_bt.ino`
+  - Upload sketch to your esp-32 via PlatformIO: `pio run -t upload` 
+    (NOTE! Check your board configuration, See: https://platformio.org/)
   - Connect pins Esp-32 -> relays
   
       - VVC -> Relay +
