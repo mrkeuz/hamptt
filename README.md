@@ -18,14 +18,16 @@ Host -> (Bluetooth) -> Esp-32 Arduino -> Relay -> Transmitter PTT button
 Hardware
 --------
 
-- `Esp32 DevKit v1 <https://docs.zerynth.com/latest/official/board.zerynth.doit_esp32/docs/index.html>`_
+- Host PC with Bluetooth (tested Ubuntu 20.04)  
+- Esp32 DevKit v1 (or similar esp32)
 - Relay shield
+- Baofeng UV-5R
 
 Examples
 --------
  
 - Find BT devices `hcitool scan`
-- Bluetooth PTT
+- Python
 
 ```python
 from hamptt import open_ptt
@@ -36,12 +38,13 @@ with open_ptt(bt_addr="A0:B1:C2:D3:E4:F5") as ptt:
     ptt.end()
 ```
 
-Installation
-------------
+Install
+-------
 
-* Host machine
-
-  Linux Bluetooth or similar for you distributive (required for pybluez)
+* Host PC machine
+  
+  - Python 3.8 
+  - Linux Bluetooth or similar Bluetooth libs for you distributive (required for pybluez)
 
 ```shell
 sudo apt-get install bluez libbluetooth-dev
@@ -57,8 +60,8 @@ python3 -m pip install "hamptt[bt]"
     - GND -> Relay -
     - GPIO 15 -> Relay IN
 
-- Connect relay and audio in/out to Transmitter Cable. You can rebuild your hands-free cable or buy another one. I.e.
-  Schematics for Baofeng looks like:
+- Connect relay and audio in/out via Transmitter Cable (you can rebuild your hands-free cable or buy another one).   
+  I.e., schematics for Baofeng UV-5R looks like:
 
   ![alt text](https://www.dxzone.com/dx33739/baofeng-mic-pin-out-and-programming-cable-schematics.jpg "Baofeng UV-5R Pins") 
 
