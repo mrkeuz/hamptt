@@ -51,21 +51,21 @@ sudo apt-get install bluez libbluetooth-dev
 python3 -m pip install "hamptt[bt]"
 ```
 
-* Esp32:
+* Esp32
 
-- Upload sketch to your esp-32 `src/arduiono/ptt_firmware_bt/ptt_firmware_bt.ino`
-- Connect pins Esp-32 -> relays
+  - Upload sketch to your esp-32 `src/arduiono/ptt_firmware_bt/ptt_firmware_bt.ino`
+  - Connect pins Esp-32 -> relays
+  
+      - VVC -> Relay +
+      - GND -> Relay -
+      - GPIO 15 -> Relay IN
 
-    - VVC -> Relay +
-    - GND -> Relay -
-    - GPIO 15 -> Relay IN
-
-- Connect relay and audio in/out via Transmitter Cable (you can rebuild your hands-free cable or buy another one).   
-  I.e., schematics for Baofeng UV-5R looks like:
-
-  ![alt text](https://www.dxzone.com/dx33739/baofeng-mic-pin-out-and-programming-cable-schematics.jpg "Baofeng UV-5R Pins") 
-
-  See: https://www.dxzone.com/dx33739/baofeng-mic-pin-out-and-programming-cable-schematics.html
+  - Connect relay and audio in/out via Transmitter Cable (you can rebuild your hands-free cable or buy another one).   
+    I.e., schematics for Baofeng UV-5R looks like:
+  
+    ![alt text](https://www.dxzone.com/dx33739/baofeng-mic-pin-out-and-programming-cable-schematics.jpg "Baofeng UV-5R Pins") 
+  
+    See: https://www.dxzone.com/dx33739/baofeng-mic-pin-out-and-programming-cable-schematics.html
 
 TODO
 ---- 
