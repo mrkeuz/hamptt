@@ -73,6 +73,10 @@ void loop() {
         startTx();
         break;
 
+      case 'R':
+        stopTx();
+        break;
+
       case 'C':
         ESP_BT.print("WORK");
         break;
@@ -89,11 +93,11 @@ void loop() {
 
       case 'H':
         ESP_BT.println("Commands: ");
-        ESP_BT.println("  \"T\" - transmit (PTT ON)");
-        ESP_BT.println("  \"R or any char\" - receive (PTT OFF)");
-        ESP_BT.println("  \"C\" - check, print 'WORK' string");
-        ESP_BT.println("  \"S\" - print unique run sign number (changes when restart or reconnect)");
-        ESP_BT.println("  \"K\" - restart arduino");
+        ESP_BT.println("  \"T\" - transmit (PTT ON) -> return 'TX' string");
+        ESP_BT.println("  \"R\" - receive (PTT OFF) -> return 'RX' string");
+        ESP_BT.println("  \"C\" - check, return 'WORK' string");
+        ESP_BT.println("  \"S\" - print unique run sign number (changes when restart)");
+        ESP_BT.println("  \"K\" - kill (restart) arduino");
         break;
     }
   }
