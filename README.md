@@ -59,7 +59,7 @@ python3 -m pip install "hamptt[bt]"
   
       - VVC -> Relay +
       - GND -> Relay -
-      - GPIO 15 -> Relay IN
+      - GPIO D25 -> Relay IN
 
   - Connect relay and audio in/out via Transmitter Cable (you can rebuild your hands-free cable or buy another one).   
     I.e., schematics for Baofeng UV-5R looks like:
