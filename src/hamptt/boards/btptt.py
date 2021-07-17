@@ -49,6 +49,7 @@ class BtPtt(AbstractPtt):
 
     def close(self):
         try:
+            self.end()
             self._send_lock.acquire()
             _logger.debug("Close socket")
             self.sock.close()
