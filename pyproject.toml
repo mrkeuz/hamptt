@@ -17,7 +17,7 @@ classifiers = [
 ]
 
 [tool.poetry.urls]
-"Documentation" = "https://github.com/python-poetry/poetry/issues"
+"Documentation" = "https://github.com/mrkeuz/hamptt/"
 
 [tool.poetry.dependencies]
 python = "^3.8"
