@@ -108,10 +108,6 @@ Wire Wire Line
 	1200 4000 1200 3800
 Wire Wire Line
 	1100 2950 1100 2750
-Text GLabel 1000 1000 0    50   Input ~ 0
-PIN
-Text GLabel 1000 1100 0    50   Input ~ 0
-GND
 $Comp
 L Connector:AudioJack3 J1
 U 1 1 5EFBCD1E
@@ -121,17 +117,6 @@ F 1 "AI" H 982 3934 50  0000 C CNN
 F 2 "User:Audio_5conn" H 1000 3700 50  0001 C CNN
 F 3 "~" H 1000 3700 50  0001 C CNN
 	1    1000 3700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x02_Male J4
-U 1 1 5EFD44E9
-P 1000 1000
-F 0 "J4" H 1250 950 50  0000 C CNN
-F 1 "PTT" H 900 1150 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1000 1000 50  0001 C CNN
-F 3 "~" H 1000 1000 50  0001 C CNN
-	1    1000 1000
 	1    0    0    -1  
 $EndComp
 Text GLabel 1900 3850 2    50   Input ~ 0
@@ -208,17 +193,64 @@ Wire Wire Line
 	1800 2550 1800 2700
 Wire Wire Line
 	1800 2950 1800 2800
-$Comp
-L pspice:R R0
-U 1 1 60F7F084
-P 1450 1000
-F 0 "R0" V 1245 1000 50  0000 C CNN
-F 1 "R0" V 1336 1000 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" H 1450 1000 50  0001 C CNN
-F 3 "~" H 1450 1000 50  0001 C CNN
-	1    1450 1000
-	0    1    1    0   
-$EndComp
 Text Notes 1450 3350 0    50   ~ 0
 (Optional) Ferrite beads FB0-FB4\nusing for filtering audio\n\n
+$Comp
+L Connector_Generic:Conn_01x15 J5
+U 1 1 60F3A410
+P 4450 1450
+F 0 "J5" H 4530 1492 50  0000 L CNN
+F 1 "Conn_01x15" H 4530 1401 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x15_P2.54mm_Vertical" H 4530 1355 50  0001 L CNN
+F 3 "~" H 4450 1450 50  0001 C CNN
+	1    4450 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x15 J3
+U 1 1 60F41DC4
+P 3400 1450
+F 0 "J3" H 3480 1492 50  0000 L CNN
+F 1 "Conn_01x15" H 3480 1401 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x15_P2.54mm_Vertical" H 3400 1450 50  0001 C CNN
+F 3 "~" H 3400 1450 50  0001 C CNN
+	1    3400 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 60F445B7
+P 4250 850
+F 0 "#PWR0106" H 4250 600 50  0001 C CNN
+F 1 "GND" H 4255 677 50  0000 C CNN
+F 2 "" H 4250 850 50  0001 C CNN
+F 3 "" H 4250 850 50  0001 C CNN
+	1    4250 850 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1200 1000 1700 1000
+$Comp
+L Connector:Conn_01x02_Male J4
+U 1 1 5EFD44E9
+P 1000 1000
+F 0 "J4" H 1250 950 50  0000 C CNN
+F 1 "PTT" H 900 1150 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1000 1000 50  0001 C CNN
+F 3 "~" H 1000 1000 50  0001 C CNN
+	1    1000 1000
+	1    0    0    -1  
+$EndComp
+Text GLabel 1000 1100 0    50   Input ~ 0
+GND
+Text GLabel 1000 1000 0    50   Input ~ 0
+DATA
+Text GLabel 3750 1050 0    50   Input ~ 0
+DATA
+Wire Wire Line
+	4150 1450 4250 1450
+Wire Wire Line
+	4150 1050 4150 1450
+Wire Wire Line
+	3750 1050 4150 1050
 $EndSCHEMATC
