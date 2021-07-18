@@ -44,15 +44,15 @@ def retry_if(ex: Exception):
     return True
 
 
-def open_ptt(br_addr: str = "", gpio: str = "") -> Generator[AbstractPtt, None, None]:
+def open_ptt(bt_addr: str = "", gpio: str = "") -> Generator[AbstractPtt, None, None]:
     """
     Entry point for all ptt implementations
     """
-    assert br_addr or gpio
+    assert bt_addr or gpio
     assert not (br_addr and gpio)
 
-    if br_addr:
-        return _bt_ptt(br_addr)
+    if bt_addr:
+        return _bt_ptt(bt_addr)
 
     elif gpio:
         return _gpio_ptt(gpio)
