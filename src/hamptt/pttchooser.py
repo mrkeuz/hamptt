@@ -49,7 +49,7 @@ def open_ptt(bt_addr: str = "", gpio: str = "") -> Generator[AbstractPtt, None, 
     Entry point for all ptt implementations
     """
     assert bt_addr or gpio
-    assert not (br_addr and gpio)
+    assert not (bt_addr and gpio)
 
     if bt_addr:
         return _bt_ptt(bt_addr)
