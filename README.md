@@ -4,12 +4,12 @@ Ham PTT
 Bluetooth PTT switch for ham radio transmitters like Baofeng UV-5R.  
 Board helps to control transmitter from PC.
 
-Problematic
------------
+Motivation
+----------
 
 Testing of UART interface showed unstable connection. During transmit via UART an usb-ttl 
 chip periodically crashes and stops working. Cause is some radio strong interference 
-on USB cable. So Bluetooth serial protocol stack chosen instead.
+on USB cable. So Bluetooth serial protocol stack (SSP) chosen instead.
 
 Schematic
 ---------
