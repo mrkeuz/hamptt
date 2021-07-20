@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hamptt"
-version = "0.3.0"
-description = "Implementation of Push-To-Tank circuit for ham radio transmitters like Baofeng UV-5R"
+version = "0.3.1"
+description = "Implementation of Push-To-Talk board for ham radio transmitters like Baofeng UV-5R"
 authors = ["mrkeuz <mr.keuz@ya.ru>"]
 license = "MIT"
 readme = "README.md"
@@ -21,8 +21,8 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-func_timeout = "*"
-PyBluez = { version = "^0.23", optional = true }
+func_timeout = ">= 4.3.5"
+PyBluez = { version = ">= 0.23", optional = true }
 
 [tool.poetry.extras]
 bt = ["PyBluez"]
