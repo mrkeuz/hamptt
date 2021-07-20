@@ -75,23 +75,28 @@ Install
       ![Baofeng UV-5R Pins](https://www.dxzone.com/dx33739/baofeng-mic-pin-out-and-programming-cable-schematics.jpg "Baofeng UV-5R Pins")  
       NOTE: You can rebuild your hands-free cable or buy another one
 
-Documentation
-=============
-
-- Esp32-wroom-devkit-v1 pinout
-  ![Esp32-wroom-devkit-v1 Pinout](./docs/esp32-wroom-wifi-devkit-v1_pinout.png "Esp32-wroom-devkit-v1 Pinout")
-
 Development
 ===========
 
-- Build and install
+* Build and install
   ```shell
   pip3 uninstall hamptt
   rm -rf dist && poetry build && pip3 install ./dist/*.whl
   ```
-
-Todo
-====
-
-- [ ] Push and test package via poetry (+ README.md)
-
+  
+* Publish
+  - Prepare  
+     ```shell
+    poetry config repositories.testpypi https://test.pypi.org/legacy/
+    poetry config pypi-token.testpypi <TOKEN>
+    
+    poetry config repositories.pypi https://upload.pypi.org/legacy/
+    poetry config pypi-token.pypi <TOKEN>
+    ```  
+  
+  - Publish
+    ```shell
+    poetry publish --build -r testpypi
+    
+    poetry publish --build -r pypi
+    ````
